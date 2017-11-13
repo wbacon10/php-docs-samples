@@ -1,0 +1,14 @@
+runtime: php55
+api_version: 1
+threadsafe: true
+instance_class: B8
+manual_scaling:
+  instances: 4
+
+handlers:
+- url: /monitoring
+  script: monitoring.php
+- url: /spanner
+  script: spanner.php
+- url: /.*
+  script: index.html
